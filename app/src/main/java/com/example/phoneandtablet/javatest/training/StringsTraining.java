@@ -1,5 +1,7 @@
 package com.example.phoneandtablet.javatest.training;
 
+import java.util.ArrayList;
+
 /**
  * Набор тренингов по работе со строками в java.
  * <p>
@@ -21,9 +23,16 @@ public class StringsTraining {
      * @return новая строка из нечетных
      * элементов строки text
      */
+
     public String getOddCharacterString(String text) {
-        //TODO: implement it
-        return "";
+        StringBuilder newString = new StringBuilder();
+        for (int i = 0; i < text.length(); i++) {
+            int x = Integer.parseInt(String.valueOf(text.charAt(i)));
+            if (x % 2 != 0) {
+                newString.append(x);
+            }
+        }
+        return newString.toString();
     }
 
     /**
@@ -36,10 +45,28 @@ public class StringsTraining {
      * идентичных последнему. Если таких нет,
      * вернуть пустой массив
      */
+
     public int[] getArrayLastSymbol(String text) {
-        //TODO: implement it
-        return new int[]{};
+        int[] resultMass;
+        if (text.equals("")) {
+            resultMass = new int[0];
+            return resultMass;
+        }
+        ArrayList<Integer> mass = new ArrayList<>();
+        char x = text.charAt(text.length() - 1);
+        for (int i = 0; i < text.length() - 1; i++) {
+            if (text.charAt(i) == x) {
+                mass.add(i);
+            }
+        }
+
+        resultMass = new int[mass.size()];
+        for (int i = 0; i < mass.size(); i++) {
+            resultMass[i] = mass.get(i);
+        }
+        return resultMass;
     }
+
 
     /**
      * Метод по получению количества
@@ -48,9 +75,15 @@ public class StringsTraining {
      * @param text строка для выборки
      * @return количество цифр в строке
      */
+
     public int getNumbersCount(String text) {
-        //TODO: implement it
-        return 0;
+        int count = 0;
+        for (int i = 0; i < text.length(); i++) {
+            if (Character.isDigit(text.charAt(i))) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -60,8 +93,15 @@ public class StringsTraining {
      * @param text текст для поиска и замены
      * @return текст, где цифры заменены словами
      */
+
     public String replaceAllNumbers(String text) {
-        //TODO: implement it
+        String[] x = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+        for (int i = 0; i < text.length(); i++) {
+            if (Character.isDigit(text.charAt(i))) {
+                int b = Integer.parseInt(String.valueOf(text.charAt(i)));
+                text = text.replace(String.valueOf(text.charAt(i)), x[b]);
+            }
+        }
         return text;
     }
 
@@ -72,9 +112,14 @@ public class StringsTraining {
      * @param text строка для изменения
      * @return измененная строка
      */
-    public String capitalReverse(String text) {
-        //TODO: implement it
-        return text;
-    }
 
+    public String capitalReverse(String text) {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (int i = 0; i < text.length(); i++) {
+            char x = text.charAt(i);
+            stringBuilder.append(Character.isLowerCase(x) ? Character.toUpperCase(x) : Character.toLowerCase(x));
+        }
+        return stringBuilder.toString();
+    }
 }

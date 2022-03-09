@@ -3,6 +3,7 @@ package com.example.phoneandtablet.javatest.collections;
 
 import androidx.annotation.NonNull;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -27,10 +28,18 @@ public class CollectionsBlock<T extends Comparable> {
      * @return объединенный упорядоченный список
      * @throws NullPointerException если один из параметров null
      */
+
     public List<T> collectionTask0(@NonNull List<T> firstList, @NonNull List<T> secondList) {
-        //TODO: implement it
-        return Collections.emptyList();
+        try {
+            List<T> finalList = new ArrayList<>(firstList);
+            finalList.addAll(secondList);
+            finalList.sort(Collections.reverseOrder());
+            return finalList;
+        } catch (NullPointerException e) {
+            throw new NullPointerException();
+        }
     }
+
 
     /**
      * Дан список. После каждого элемента добавьте предшествующую ему часть списка.
@@ -39,9 +48,18 @@ public class CollectionsBlock<T extends Comparable> {
      * @return измененный список
      * @throws NullPointerException если один из параметров null
      */
+
     public List<T> collectionTask1(@NonNull List<T> inputList) {
-        //TODO: implement it
-        return Collections.emptyList();
+        try {
+            List<T> outputList = new ArrayList<>();
+            for (int i = 0; i < inputList.size(); i++) {
+                outputList.add(inputList.get(i));
+                outputList.addAll(inputList.subList(0, i));
+            }
+            return outputList;
+        } catch (NullPointerException e) {
+            throw new NullPointerException();
+        }
     }
 
     /**
@@ -52,9 +70,17 @@ public class CollectionsBlock<T extends Comparable> {
      * @return <tt>true</tt> если множества списков совпадают
      * @throws NullPointerException если один из параметров null
      */
+
     public boolean collectionTask2(@NonNull List<T> firstList, @NonNull List<T> secondList) {
-        //TODO: implement it
-        return true;
+        try {
+            List<T> newFirst = new ArrayList<>(firstList);
+            List<T> newSecond = new ArrayList<>(secondList);
+            newFirst.removeAll(secondList);
+            newSecond.removeAll(firstList);
+            return newFirst.size() == 0 & newSecond.size() == 0;
+        } catch (NullPointerException e) {
+            throw new NullPointerException();
+        }
     }
 
     /**
@@ -69,8 +95,12 @@ public class CollectionsBlock<T extends Comparable> {
      * @throws NullPointerException если один из параметров null
      */
     public List<T> collectionTask3(@NonNull List<T> inputList, int n) {
-        //TODO: implement it
-        return Collections.emptyList();
+        try {
+            Collections.rotate(inputList, n);
+        } catch (NullPointerException e) {
+            throw new NullPointerException();
+        }
+        return inputList;
     }
 
     /**
@@ -85,10 +115,17 @@ public class CollectionsBlock<T extends Comparable> {
      */
     public List<String> collectionTask4(@NonNull List<String> inputList, @NonNull String a,
                                         @NonNull String b) {
-        //TODO: implement it
-        return Collections.emptyList();
+        int i;
+        try {
+            while ((i = inputList.indexOf(a)) > -1) {
+                inputList.set(i, b);
+            }
+        } catch (NullPointerException e) {
+            throw new NullPointerException();
+        }
+        return inputList;
     }
-
+}
     /*
       Задание подразумевает создание класса(ов) для выполнения задачи.
 
@@ -99,4 +136,4 @@ public class CollectionsBlock<T extends Comparable> {
       Определите самого старшего студента и самого младшего студентов.
       Для каждой группы найдите лучшего с точки зрения успеваемости студента.
      */
-}
+

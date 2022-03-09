@@ -1,5 +1,7 @@
 package com.example.phoneandtablet.javatest.training;
 
+import java.util.ArrayList;
+
 /**
  * Набор тренингов по работе с примитивными типами java.
  * <p>
@@ -20,8 +22,7 @@ public class ElementaryTraining {
      * @return среднее значение для введенных чисел
      */
     public double averageValue(int firstValue, int secondValue) {
-        //TODO: implement it
-        return 0;
+        return (double) (firstValue + secondValue) / 2;
     }
 
     /**
@@ -33,9 +34,9 @@ public class ElementaryTraining {
      * @param thirdValue  возвести в квадрат
      * @return сумма новых трех чисел
      */
+
     public double complicatedAmount(int firstValue, int secondValue, int thirdValue) {
-        //TODO: implement it
-        return 0;
+        return (firstValue * 2) + (secondValue - 3) + (thirdValue * thirdValue);
     }
 
     /**
@@ -46,8 +47,11 @@ public class ElementaryTraining {
      * @param value число для изменения
      * @return новое значение
      */
+
     public int changeValue(int value) {
-        //TODO: implement it
+        if (value > 3) {
+            value += 10;
+        } else value -= 10;
         return value;
     }
 
@@ -61,9 +65,26 @@ public class ElementaryTraining {
      * @param value число для перестановки
      * @return новое число
      */
+
     public int swapNumbers(int value) {
-        //TODO: implement it
-        return 0;
+        if (value < 10 && value > -10 || value > 99999)
+            return value;
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+        while (value != 0) {
+            numbers.add(value % 10);
+            value /= 10;
+        }
+        int x = numbers.get(0);
+        numbers.set(0, numbers.get(numbers.size() - 1));
+        numbers.set(numbers.size() - 1, x);
+
+        x = 1;
+        for (int i = 0; i < numbers.size(); i++) {
+            value += numbers.get(i) * x;
+            x *= 10;
+        }
+        return value;
     }
 
     /**
@@ -76,8 +97,24 @@ public class ElementaryTraining {
      * @param value число для изменения
      * @return новое число
      */
+
     public int zeroEvenNumber(int value) {
-        //TODO: implement it
-        return 0;
+        if (value < 10 && value > -10 || value > 99999)
+            return value;
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+        while (value != 0) {
+            numbers.add(value % 10);
+            value /= 10;
+        }
+
+        int x = 1;
+        for (int i = 0; i < numbers.size(); i++) {
+            if (numbers.get(i) % 2 == 0 & i != numbers.size() - 1)
+                numbers.set(i, 0);
+            value += numbers.get(i) * x;
+            x *= 10;
+        }
+        return value;
     }
 }
