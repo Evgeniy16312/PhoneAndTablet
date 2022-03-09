@@ -1,4 +1,4 @@
-package com.example.phoneandtablet.practika.task2;
+package com.example.phoneandtablet.practicePart1.task2;
 
 import java.util.*;
 

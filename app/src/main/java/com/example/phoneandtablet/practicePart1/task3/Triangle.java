@@ -1,4 +1,4 @@
-package com.example.phoneandtablet.practika.task3;
+package com.example.phoneandtablet.practicePart1.task3;
 
 import android.graphics.Point;
 

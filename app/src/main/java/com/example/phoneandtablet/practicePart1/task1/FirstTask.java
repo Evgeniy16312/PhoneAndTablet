@@ -1,4 +1,4 @@
-package com.example.phoneandtablet.practika.task1;
+package com.example.phoneandtablet.practicePart1.task1;
 
 import java.util.Scanner;
 /*

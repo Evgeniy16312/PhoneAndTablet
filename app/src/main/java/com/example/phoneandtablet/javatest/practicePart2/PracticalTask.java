@@ -1,4 +1,4 @@
-package com.example.phoneandtablet.practika;
+package com.example.phoneandtablet.javatest.practicePart2;
 
 import android.graphics.Point;
 

@@ -1,4 +1,4 @@
-package com.example.phoneandtablet.practika.task4;
+package com.example.phoneandtablet.practicePart1.task4;
 
 import android.annotation.SuppressLint;
 

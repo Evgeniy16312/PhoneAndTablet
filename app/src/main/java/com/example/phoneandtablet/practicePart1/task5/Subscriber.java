@@ -1,4 +1,4 @@
-package com.example.phoneandtablet.practika.task5;
+package com.example.phoneandtablet.practicePart1.task5;
 
 class Subscriber {
 
