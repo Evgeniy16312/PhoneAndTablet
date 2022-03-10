@@ -1,4 +1,4 @@
-package com.example.phoneandtablet.practicePart1.task8;
+package com.example.phoneandtablet.javatest.practicePart1.task8;
 
 
 public class StudentsModel {

@@ -1,4 +1,4 @@
-package com.example.phoneandtablet.practicePart1.task7;
+package com.example.phoneandtablet.javatest.practicePart1.task7;
 
 import androidx.annotation.NonNull;
 

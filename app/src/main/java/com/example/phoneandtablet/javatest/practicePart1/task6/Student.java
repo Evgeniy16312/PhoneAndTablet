@@ -1,4 +1,4 @@
-package com.example.phoneandtablet.practicePart1.task6;
+package com.example.phoneandtablet.javatest.practicePart1.task6;
 
 public class Student {
     private String name;

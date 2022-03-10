@@ -1,4 +1,4 @@
-package com.example.phoneandtablet.practicePart1.task1;
+package com.example.phoneandtablet.javatest.practicePart1.task1;
 
 import java.util.Scanner;
 /*
